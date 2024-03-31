@@ -8,7 +8,7 @@ import rpgBasePack.BaseAttributes;
 import rpgPlayerPack.PlayerWarrior;
 import rpgBasePack.Inventory;
 import rpgItemPack.Item;
-//import rpgItemPack.
+
 public class EnemyCharacter extends RpgCharacter {
 
 
@@ -33,10 +33,10 @@ public class EnemyCharacter extends RpgCharacter {
 
     public EnemyCharacter(String name, double baseHealth, Inventory inventory){
         super(name,baseHealth,inventory);
-
-
     }
+
     public EnemyCharacter(String name, double baseHealth, Inventory inventory, BaseAttributes attributes){
+
         super(name, baseHealth,inventory);
 
         this.attributes = attributes;
@@ -72,13 +72,9 @@ public class EnemyCharacter extends RpgCharacter {
         }
 
         return result;
-
-
-
     }
 
     public void setCurrentDrop(Item currentDrop){
-
         this.currentDrop = currentDrop;
     }
 
@@ -87,21 +83,19 @@ public class EnemyCharacter extends RpgCharacter {
     }
 
     public  Item getDropItem(int index){
-
         return  dropItems.getObject(index);
     }
 
-    public void addDropItems(Item newItem)
-    {
+    public void addDropItems(Item newItem){
         dropItems.add(newItem);
     }
 
     public void setDropItems(int size){
-
         dropItems = new Array<>(size);
     }
-    public void attack(PlayerWarrior playerWarrior)
-    {
+
+    public void attack(PlayerWarrior playerWarrior){
+
         double enemyDamage = RpgCalculator.physicalDamageCalculator(this, playerWarrior);
 
         double playerHealth = playerWarrior.getHealth() - enemyDamage;
@@ -111,9 +105,7 @@ public class EnemyCharacter extends RpgCharacter {
         System.out.println(this.getName() + " deals " + enemyDamage + " damage");
 
         if(playerWarrior.getHealth() < 0) {
-
             playerWarrior.setHealth(0);
-
         }
     }
 
@@ -122,11 +114,7 @@ public class EnemyCharacter extends RpgCharacter {
         Random rnd = new Random();
         int randomInt = rnd.nextInt(dropItems.getCount());
 
-
         return dropItems.getObject(randomInt);
-
-
-
     }
 
     public static void main(String[] args){

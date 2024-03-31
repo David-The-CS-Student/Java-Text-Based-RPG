@@ -10,15 +10,11 @@ import java.util.InputMismatchException;
 
 public class Store extends Inventory{
 
-
     private String name;
 
-    public Store(String name, int size)
-    {
+    public Store(String name, int size){
         super(size);
         this.name = name;
-
-
     }
 
     public void displayStoreOptions(){
@@ -30,8 +26,6 @@ public class Store extends Inventory{
             System.out.println("1. Buy");
             System.out.println("2. Sell");
             System.out.println("3. Leave");
-
-            //try catch input exc
 
             int choice = 0;
 
@@ -54,9 +48,7 @@ public class Store extends Inventory{
             {
                 break;
             }
-
         }
-
     }
 
     private void displayBuyOptions()  {
@@ -74,7 +66,6 @@ public class Store extends Inventory{
 
             System.out.println((getItemViews().getCount() + 1) + ". Back");
             System.out.print("select an item to inspect using its corresponding number: ");
-
 
             int itemChoice = 0;
 
@@ -104,7 +95,6 @@ public class Store extends Inventory{
 
                         playerGold.setCount(newGoldAmount);
 
-
                         if (!chosenItem.getClass().getSuperclass().getSimpleName().equals("Item")) {
 
                             try {
@@ -113,12 +103,9 @@ public class Store extends Inventory{
 
                                 Item item = (Item) itemClass.getDeclaredConstructor().newInstance();
 
-
                                 item.setPlayerOwner(player);
 
                                 player.getPlayerInventory().addItem(item);
-
-
 
                             } catch (ClassNotFoundException | IllegalAccessException | InstantiationException |
                                      InvocationTargetException | NoSuchMethodException exc) {
@@ -127,19 +114,16 @@ public class Store extends Inventory{
 
                             }
 
-
                         }else{
 
                             chosenItem.setPlayerOwner(player);
 
                             player.getPlayerInventory().addItem(chosenItem.clone());
                         }
-
                     }
                 }
             }
         }
-
     }
 
     private void displaySellOptions(){
@@ -156,12 +140,10 @@ public class Store extends Inventory{
 
             player.getPlayerInventory().displayItemViews();
 
-
             System.out.println((player.getPlayerInventory().getCount() + 1) + ". Back");
 
             System.out.print("select an item to sell using its corresponding number: ");
 
-            //input exc
             int itemChoice = 0;
 
             try {
@@ -173,7 +155,6 @@ public class Store extends Inventory{
                 RpgGame.getInput().nextLine();
                 continue;
             }
-
 
             if (itemChoice == (player.getPlayerInventory().getCount() + 1)) {
                 break;

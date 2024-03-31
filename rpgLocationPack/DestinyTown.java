@@ -15,18 +15,11 @@ import java.util.InputMismatchException;
 import java.util.Random;
 class DestinyTownSewers extends Location{
 
-
     EnemyCharacter enemyCharacterInstance;
 
-
     public DestinyTownSewers(){
-
         super("Destiny Town Sewers");
-
-
     }
-
-
 
     public void displaySewerOptions()
     {
@@ -68,9 +61,7 @@ class DestinyTownSewers extends Location{
 
                 break;
             }
-
         }
-
     }
 
     private void explore()
@@ -104,15 +95,20 @@ class DestinyTownSewers extends Location{
 
             if(RpgGame.getInstance().getPlayer().getHealth() > 0) {
                 if (QuestManager.questInProgress()) {
+
                     if (QuestManager.getQuest() instanceof GiantRatQuest quest) {
+
                         if (enemyCharacterInstance instanceof GiantRat) {
+
                             quest.incrementRatKillCount(enemyCharacterInstance);
+
                             if(enemyCharacterInstance.getCurrentDrop() != null) {
                                 quest.incrementRatPeltCount(enemyCharacterInstance.getCurrentDrop());
                             }
                         }
 
                         if (quest.isComplete()) {
+
                             int reward = quest.getReward() +  RpgGame.getInstance().getPlayer().getGold().getCount();
                             RpgGame.getInstance().getPlayer().getGold().setCount(reward);
                             QuestManager.addCompletedQuest(quest);
@@ -127,23 +123,12 @@ class DestinyTownSewers extends Location{
                 }
 
             }
-
-
-
-
         }else{
 
             System.out.println("You found nothing in the sewers");
             System.out.println();
-
         }
-
-
-
-
     }
-
-
 }
 
 public class DestinyTown extends Location{
@@ -154,9 +139,6 @@ public class DestinyTown extends Location{
     private DestinyTownSewers destinyTownSewers;
 
     private static final Array<Quest> quests = new Array<>(2);
-
-    //Questboard
-    //
 
     public DestinyTown(){
 
@@ -308,7 +290,6 @@ public class DestinyTown extends Location{
         GameCharacter player = RpgGame.getInstance().getPlayer();
 
         player.setHealth(player.getMaxHealth());
-
 
     }
 

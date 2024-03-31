@@ -29,8 +29,7 @@ public class WeaponSecondary extends Weapon{
 
     }
 
-    public WeaponSecondary(WeaponSecondary copy)
-    {
+    public WeaponSecondary(WeaponSecondary copy){
         super(copy);
     }
 

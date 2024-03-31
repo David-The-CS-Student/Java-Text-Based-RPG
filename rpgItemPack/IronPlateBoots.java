@@ -6,7 +6,6 @@ import rpgPlayerPack.PlayerWarrior;
 
 public class IronPlateBoots extends ArmorFeet{
 
-
     public IronPlateBoots(){
 
         super("Iron Plate Boots", "Boots made with iron plates", 25,

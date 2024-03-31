@@ -3,7 +3,6 @@ package rpgBasePack;
 
 public class BaseAttributes {
 
-
     private double vitality;
     private double attack, magic;
     private double defence, magicDefence;

@@ -20,7 +20,6 @@ public class SatinCloak extends  ArmorTorso{
         setCount(1);
     }
 
-
     public SatinCloak(EnemyWarrior owner){
 
         super("Satin Cloak", "Cloak made of satin", 40, owner,
@@ -30,8 +29,7 @@ public class SatinCloak extends  ArmorTorso{
 
     }
 
-    public SatinCloak(SatinCloak copy)
-    {
+    public SatinCloak(SatinCloak copy){
         super(copy);
         setCount(copy.getCount());
     }

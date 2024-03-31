@@ -4,8 +4,6 @@ import rpgEnemyPack.EnemyWarrior;
 import rpgPlayerPack.PlayerWarrior;
 public class IronChainMail extends ArmorTorso {
 
-
-
     public IronChainMail(){
         super("Iron Chain Mail", "A suit made with iron chain mail", 40,
             new BaseAttributes(0,0,0,2, 1,-1));

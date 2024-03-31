@@ -20,9 +20,6 @@ import java.io.*;
 
 public class Load {
 
-
-
-
     public static PlayerWarrior loadPlayerData(){
 
         try(Scanner scan = new Scanner(Save.getPlayerDataFile()))
@@ -41,8 +38,6 @@ public class Load {
                    default -> null;
 
                };
-
-
 
                 data = scan.next() + scan.nextLine();
 
@@ -126,13 +121,11 @@ public class Load {
 
                            Object[] questObjectiveData = new Object[quest.getObjectiveCount()];
 
-                           //create overridable method that sets values for particular quest
                            int objectiveCounter = 0;
                            while(objectiveCounter < quest.getObjectiveCount())
                            {
 
                                questObjectiveData[objectiveCounter] = scan.next();
-
                                objectiveCounter++;
                            }
 
@@ -146,7 +139,6 @@ public class Load {
                                 IllegalAccessException | NoSuchMethodException e) {
                            throw new RuntimeException(e);
                        }
-
                    }
                }
 
@@ -172,7 +164,6 @@ public class Load {
 
                                     item.setPlayerOwner(loadPlayer);
 
-                                    //scan for amount change item count here
 
                                     int itemCount = scan.nextInt();
 
@@ -188,16 +179,12 @@ public class Load {
                                 }
                             }
                         }
-
                     }
                 }
 
                 while(scan.hasNext()){
 
-
                     String equipmentData = scan.next();
-
-
 
                     if(!equipmentData.equals("Equipment")) {
                         try {
@@ -226,43 +213,20 @@ public class Load {
 
                 }
 
-
-//            output.println(attr.getVitality());
-//            output.println(attr.getAttack());
-//            output.println(attr.getMagic());
-//            output.println(attr.getDefence());
-//            output.println(attr.getMagicDefence());
-//            output.println(attr.getSpeed());
-
-
              return loadPlayer;
 
-
             }
-
-
-             //assert loadPlayer != null;
-
-
-
         }catch(FileNotFoundException exc){
 
-
-
         }
-
-
      return null;
 
     }
 
-
     public static void loadBankData(){
-
 
         try(Scanner scan = new Scanner(Save.getBankDataFile()))
         {
-
            while (scan.hasNext())
            {
 
@@ -285,19 +249,15 @@ public class Load {
                }
            }
 
-        }catch(IOException exc)
-        {
-
+        }catch(IOException exc){
 
         }
     }
 
     public static void loadQuestManagerData(){
 
-
         try(Scanner scan = new Scanner(Save.getQuestManagerFile()))
         {
-
             while(scan.hasNext())
             {
                 try{
@@ -328,16 +288,10 @@ public class Load {
                          InstantiationException | InvocationTargetException e) {
                     throw new RuntimeException(e);
                 }
-
-
             }
-
         }catch(IOException exc)
         {
 
         }
-
-
     }
-
 }

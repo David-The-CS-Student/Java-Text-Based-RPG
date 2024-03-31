@@ -10,8 +10,6 @@ import rpgItemPack.SpiderVenom;
 
 public class GiantSpider extends EnemyCharacter {
 
-
-
     public GiantSpider() {
 
         super("Giant Spider", 5, null,

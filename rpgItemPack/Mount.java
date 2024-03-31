@@ -3,7 +3,6 @@ import rpgBasePack.RpgCharacter;
 
 public class Mount {
 
-
     private String name;
 
     private RpgCharacter owner = null;
@@ -91,9 +90,7 @@ public class Mount {
 
             System.out.println("This mount need an owner to ride!");
         }
-
     }
-
 
     @Override
     public String toString()

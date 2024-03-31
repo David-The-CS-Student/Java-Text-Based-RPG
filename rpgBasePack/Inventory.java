@@ -3,21 +3,17 @@ import generics.Array;
 import rpgItemPack.Item;
 public class Inventory {
 
-
-
     private final Item[] items;
 
     Array<Item.ItemView> itemViews;
     private int count = 0;
 
-    public Inventory(int size)
-    {
+    public Inventory(int size){
         items = new Item[size];
         itemViews = new Array<>(size);
     }
 
-    public Inventory(Inventory copy)
-    {
+    public Inventory(Inventory copy){
         this.items = new Item[copy.getCapacity()];
         this.itemViews = new Array<>(copy.getCapacity());
         for(int itemIndex = 0; itemIndex < copy.getCount(); itemIndex++)
@@ -27,9 +23,7 @@ public class Inventory {
         }
     }
 
-
-    public Item getItem(int index)
-    {
+    public Item getItem(int index){
         try {
 
             return items[index];
@@ -44,8 +38,7 @@ public class Inventory {
     }
 
 
-    public Item getItem(String name)
-    {
+    public Item getItem(String name) {
 
         for(int itemIndex = 0; itemIndex < this.count; itemIndex++) {
 
@@ -58,15 +51,15 @@ public class Inventory {
     }
 
 
-    public void setItem(int index, Item newItem)
-    {
+    public void setItem(int index, Item newItem){
+
         try {
 
             items[index] = newItem;
             items[index].setId(index);
 
-        }catch (ArrayIndexOutOfBoundsException err)
-        {
+        }catch (ArrayIndexOutOfBoundsException err){
+
             System.out.println(err.getMessage());
 
         }
@@ -107,7 +100,6 @@ public class Inventory {
         System.out.println();
 
         count++;
-
     }
 
     public void addItem(Item newItem, int amount) {
@@ -192,9 +184,7 @@ public class Inventory {
     //remove item at index
     public void removeItem(int index){
 
-
         if(index < count) {
-
             if(items[index].isStackable()) {
                 if (items[index].getCount() == 1) {
                     for (int itemIndex = index; itemIndex < count - 1; itemIndex++) {
@@ -216,7 +206,6 @@ public class Inventory {
             }
             else{
 
-
                 for (int itemIndex = index; itemIndex < count - 1; itemIndex++) {
 
                     items[itemIndex] = items[itemIndex + 1];
@@ -228,17 +217,13 @@ public class Inventory {
 
                 count--;
             }
-
-
         }else{
-
             System.out.println("Index " + index + " out of range. Array length is " + items.length);
         }
 
     }
 
     public void removeItem(int index, int amount){
-
 
         if(index < count) {
 
@@ -249,7 +234,6 @@ public class Inventory {
 
                     if (newCount == 0) {
                         for (int itemIndex = index; itemIndex < count - 1; itemIndex++) {
-
 
                             this.items[itemIndex] = this.items[itemIndex + 1];
 
@@ -264,11 +248,9 @@ public class Inventory {
                         items[index].setCount(newCount);
 
                     }
-
                 }
             }
             else{
-
 
                 for (int itemIndex = index; itemIndex < count - 1; itemIndex++) {
 
@@ -288,7 +270,6 @@ public class Inventory {
         }
 
     }
-
 
     public Item[] getItems() {
         return this.items;
@@ -310,8 +291,8 @@ public class Inventory {
 
             for (int itemIndex = 0; itemIndex < count; itemIndex++) {
 
-
                 System.out.println( (itemIndex+1)+ ". " + items[itemIndex]);
+                
             }
 
         }else{

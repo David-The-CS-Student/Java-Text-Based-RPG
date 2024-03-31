@@ -3,7 +3,6 @@ package rpgBasePack;
 
 public class RpgCharacter extends GameCharacter {
 
-
     private int level = 1;
 
     private int experience = 500;
@@ -19,7 +18,6 @@ public class RpgCharacter extends GameCharacter {
         super(name, baseHealth);
         this.inventory = inventory;
     }
-
 
     public int getLevel() {
         return this.level;
@@ -45,18 +43,15 @@ public class RpgCharacter extends GameCharacter {
         this.inventory = inventory;
     }
 
-
     @Override
-    public void displayClassInfo()
-    {
+    public void displayClassInfo(){
         super.displayClassInfo();
 
         System.out.println("I am a RPG character");
     }
 
     @Override
-    public String toString()
-    {
+    public String toString(){
 
         return "this - " + this.getClass().getSimpleName() + "\n" +
                 " Character Name: " + this.getName() + " | " + "Lv: " + this.level + " | " +"Health Points: "+ this.getHealth();

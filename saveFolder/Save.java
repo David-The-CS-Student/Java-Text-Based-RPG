@@ -19,15 +19,11 @@ public class Save {
         return playerDataFile;
     }
 
-
-
-
     private static final File bankDataFile = new File("./saveFolder/BankData.txt");
 
     public static File getBankDataFile(){
         return bankDataFile;
     }
-
 
     private static final File questManagerFile = new File("./saveFolder/QuestManagerData.txt");
 
@@ -38,15 +34,9 @@ public class Save {
 
     public static void savePlayerData(){
 
-
-
-
         PlayerWarrior player = RpgGame.getInstance().getPlayer();
 
-
         try (PrintWriter output = new PrintWriter(new FileWriter(playerDataFile, false))) {
-
-
 
             output.println(player.getClass().getSimpleName());
             output.println(player.getName());
@@ -69,8 +59,8 @@ public class Save {
 
             output.println(player.locationName);
 
-            if(QuestManager.questInProgress())
-            {
+            if(QuestManager.questInProgress()){
+
                 Quest quest = QuestManager.getQuest();
                 output.println("Quest");
                 output.println(quest.getClass().getSimpleName());
@@ -79,8 +69,6 @@ public class Save {
 
             }
 
-
-
             Inventory inventory = player.getInventory();
 
             output.println("Inventory");
@@ -88,7 +76,6 @@ public class Save {
 
                     output.println(inventory.getItem(itemIndex).getClass().getSimpleName());
 
-                    //save amount
                     output.println(inventory.getItem(itemIndex).getCount());
             }
 
@@ -96,26 +83,16 @@ public class Save {
 
             output.println("Equipment");
 
-            for(int itemIndex = 0; itemIndex < equipment.getCount(); itemIndex++)
-            {
+            for(int itemIndex = 0; itemIndex < equipment.getCount(); itemIndex++){
                 output.println(equipment.getItem(itemIndex).getClass().getSimpleName());
             }
 
 
             output.flush();
 
-
-
-
         } catch (IOException exc) {
-
-
         }
-
-
-
     }
-
 
     public static void saveBankData(){
 
@@ -124,41 +101,28 @@ public class Save {
 
             Bank bankInstance = Bank.getInstance();
 
-            //save bank data
-
-           output.print(bankInstance.getBankData());
-
+            output.print(bankInstance.getBankData());
 
         }catch(IOException exc){
 
-
         }
-
     }
 
     public static void saveQuestMangerData(){
 
-       try(PrintWriter output = new PrintWriter(new FileWriter(getQuestManagerFile(), false)))
-       {
+       try(PrintWriter output = new PrintWriter(new FileWriter(getQuestManagerFile(), false))){
 
            Object[] quests = QuestManager.getCompletedQuests();
 
-           for(Object o : quests)
-           {
-               if(o instanceof Quest quest)
-               {
+           for(Object o : quests) {
+               if(o instanceof Quest quest){
                   output.print(quest.getClass().getSimpleName() + " "+ quest.getQuestData());
                }
            }
-
-
 
        }catch(IOException exc)
        {
 
        }
-
-
     }
-
 }

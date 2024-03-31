@@ -5,7 +5,6 @@ import rpgBasePack.BaseAttributes;
 import rpgPlayerPack.PlayerSwordsman;
 public class IronSword extends Sword{
 
-
     public IronSword(){
 
         super("Iron Sword","A sword made of iron.",50,

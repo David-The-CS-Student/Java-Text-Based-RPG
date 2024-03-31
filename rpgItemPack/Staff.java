@@ -29,7 +29,6 @@ public class Staff extends WeaponPrimary{
 
     }
 
-
     public  Staff(Staff copy){
         super(copy);
     }

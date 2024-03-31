@@ -4,14 +4,11 @@ import rpgItemPack.*;
 
 public class Equipment extends Inventory{
 
-
     public Equipment(){
-
         super(8);
     }
 
-    public Equipment(Equipment copy)
-    {
+    public Equipment(Equipment copy){
         super(copy);
     }
 
@@ -43,11 +40,8 @@ public class Equipment extends Inventory{
                     return item;
                 }
             }
-
         }
 
         return null;
-
     }
-
 }

@@ -42,7 +42,6 @@ public class ArmorFeet extends Armor{
         super(copy);
     }
 
-
     @Override
     public boolean equip() {
 

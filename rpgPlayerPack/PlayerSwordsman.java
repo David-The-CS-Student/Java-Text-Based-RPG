@@ -45,7 +45,6 @@ public class PlayerSwordsman extends PlayerWarrior {
     }
 
 
-
     public Shield getShield()
     {
         if(getSecondaryWeapon() instanceof  Shield)

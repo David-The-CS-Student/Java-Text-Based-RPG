@@ -5,10 +5,7 @@ import rpgPlayerPack.PlayerWarrior;
 
 public interface IUsable {
 
-
-     void use(PlayerWarrior player);
-
-
+    void use(PlayerWarrior player);
     void use(EnemyCharacter enemy);
 
 }

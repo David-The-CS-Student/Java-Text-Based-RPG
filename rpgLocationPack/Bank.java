@@ -36,11 +36,8 @@ public class Bank {
             bankItems = new Array<>(3);
         }
 
-        public boolean addItem(Item item)
-        {
-
-            if(bankItems.getCount() < bankItems.getCapacity())
-            {
+        public boolean addItem(Item item){
+            if(bankItems.getCount() < bankItems.getCapacity()){
 
                 BankItem bankItem = new BankItem(item);
 
@@ -48,11 +45,8 @@ public class Bank {
 
                 return true;
             }
-
             return false;
         }
-
-
 
         public boolean removeBankItem(int id){
 
@@ -60,10 +54,7 @@ public class Bank {
             boolean isFound = false;
             for(int columnIndex = 0; columnIndex < bankItems.getCount(); columnIndex++){
 
-                //System.out.println(bankItems.getObject(columnIndex).item.getId());
-                if(bankItems.getObject(columnIndex).item.getId() == id)
-                {
-                    //System.out.println(columnIndex);
+                if(bankItems.getObject(columnIndex).item.getId() == id){
                     if(columnIndex == bankItems.getCapacity()-1)
                     {
                         bankItems.remove(columnIndex);
@@ -82,24 +73,19 @@ public class Bank {
 
                     int newId = bankItems.getObject(columnIndex).item.getId()-1;
 
-                    //System.out.println(currentItemId);
                     bankItems.getObject(columnIndex).item.setId(newId);
 
                 }
-                //System.out.println(index);
                bankItems.remove(index);
             }
 
             return isFound;
         }
 
-        //not index but the number on display
         public BankItem getBankItem(int id){
 
-            for(int itemIndex = 0; itemIndex < bankItems.getCount(); itemIndex++)
-            {
-                if(bankItems.getObject(itemIndex).item.getId() == id)
-                {
+            for(int itemIndex = 0; itemIndex < bankItems.getCount(); itemIndex++){
+                if(bankItems.getObject(itemIndex).item.getId() == id){
                     return bankItems.getObject(itemIndex);
                 }
             }
@@ -167,8 +153,7 @@ public class Bank {
         return player;
     }
 
-    public static void setPlayer(PlayerWarrior newPlayer)
-    {
+    public static void setPlayer(PlayerWarrior newPlayer) {
         player = newPlayer;
     }
     private static Bank instance = null;
@@ -217,7 +202,6 @@ public class Bank {
                {
                    bankItem.item.setCount(bankItem.item.getCount() +item.getCount());
 
-
                   return true;
                }
            }
@@ -236,52 +220,35 @@ public class Bank {
                            views.add(bankItemView);
 
                            if (!isFull()) {
-
                                count++;
-
                                item.setId(((row)*3) + (views.getObject(row).getCount() +1) );
-
-
                            }
                           return true;
                        }
-
                    } else {
 
                        if (!isFull()) {
-
                            count++;
-
                            item.setId((row*3) + views.getObject(row).getCount() );
-
                        }
-
                        return true;
                    }
                }
            }
-
        }else{
-
 
            BankItemView bankItemView = new BankItemView();
 
-           if(!isFull())
-           {
+           if(!isFull()){
                count++;
                item.setId(count);
-
            }
 
            bankItemView.addItem(item);
            views.add(bankItemView);
 
-
            return true;
        }
-
-
-
        return false;
    }
 
@@ -301,25 +268,19 @@ public class Bank {
 
                        view.bankItems.getObject(column).item.setCount(itemCount-1);
 
-                   }else
-                   {
+                   }else{
 
                        view.removeBankItem(id);
 
-                       if(view.getCount() == 0)
-                       {
+                       if(view.getCount() == 0){
                            views.remove(row);
                        }
                        count--;
                    }
-
-
                    return bankItem;
                }
            }
-
        }
-
        return null;
    }
    public boolean isFull()
@@ -366,7 +327,6 @@ public class Bank {
            switch(choice)
            {
                case'1': {
-                   //bank item selector loop
 
                    assert  Bank.getPlayer() != null;
 
@@ -382,8 +342,6 @@ public class Bank {
 
                        System.out.println( exitNumber + " Back");
 
-
-
                        int itemChoice = 0;
 
                        try{
@@ -394,11 +352,9 @@ public class Bank {
                            continue ;
                        }
 
-                       if(itemChoice == exitNumber)
-                       {
+                       if(itemChoice == exitNumber) {
                            break;
                        }
-
 
                        Item inventoryItem = playerInventory.getItem(itemChoice-1);
 
@@ -454,18 +410,15 @@ public class Bank {
                        } catch (NullPointerException exc) {
                            System.out.println(exc.getMessage());
                        }
-
                    }
 
                    break;
                }
                case '2': {
-                   //inventory selector loop
 
                    assert Bank.getPlayer() != null;
 
                    Inventory playerInventory = Bank.getPlayer().getInventory();
-
 
                    while (true) {
 
@@ -560,19 +513,13 @@ public class Bank {
 
                        }
                    }
-
                    break;
                }
                case '3':
-                   //leave banking loop
-
                    break mainLoop;
-
            }
        }
-
    }
-
 
    public void displayInterface(){
 
@@ -594,9 +541,7 @@ public class Bank {
 
     public static void main(String[] args) {
 
-
-        for(int i = 0; i < 9; i++)
-        {
+        for(int i = 0; i < 9; i++){
             Bank.getInstance().add(new Item("Test Item " + (i+1)));
 
         }
@@ -637,26 +582,7 @@ public class Bank {
         }
 
         Bank.getInstance().displayInterface();
-
-         BankItemView view1 = new BankItemView();
-
-        // view1.addItem(new RingOfPace());
-        // view1.addItem(new AmuletOfStrength());
-         //view1.addItem(new BlessedNecklace());
-
-         //view1.addItem(new IronChainMailLeggings());
-         BankItemView view2 = new BankItemView();
-        // view2.addItem(new IronChainMailLeggings());
-         //BankItemView view3 = new BankItemView(new IronChainMailLeggings(), new Bones(), new FreshCheese());
-         //BankItemView view4 = new BankItemView(new SpiderSilk(), new SpiderCarcass(), new PotionHealthSmall());
-
-         //System.out.println(view1.itemView());
-         //System.out.println(view2.itemView());
-         //System.out.println(view3.itemView());
-         //System.out.println(view4.itemView());
-
+    
     }
-
-
 
 }

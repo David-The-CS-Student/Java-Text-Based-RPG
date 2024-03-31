@@ -5,7 +5,6 @@ import rpgBasePack.BaseAttributes;
 
 public class BlessedNecklace extends  AccessoryNeck {
 
-
     public BlessedNecklace(){
 
         super("Blessed Necklace", "A holy necklace",150,

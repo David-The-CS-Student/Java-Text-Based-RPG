@@ -6,8 +6,6 @@ import rpgEnemyPack.EnemyCharacter;
 
 public class RpgCalculator {
 
-
-
     public static double physicalDamageCalculator(PlayerWarrior attacker, EnemyCharacter defender)
     {
 
@@ -25,7 +23,6 @@ public class RpgCalculator {
 
     public static double magicDamageCalculator(PlayerWarrior attacker, EnemyCharacter defender)
     {
-
         //to do: add a fraction of the level to the attacker and defender so higher levels get an advantage
         double damage = (attacker.getTotalMagicPoints() / defender.totalMagicDefencePoints);
 
@@ -54,7 +51,6 @@ public class RpgCalculator {
 
     public static double magicDamageCalculator(EnemyCharacter attacker , PlayerWarrior defender)
     {
-
         //to do: add a fraction of the level to the attacker and defender so higher levels get an advantage
         double damage = (attacker.totalMagicPoints/defender.getTotalMagicDefencePoints());
 

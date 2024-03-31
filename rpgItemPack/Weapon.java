@@ -10,7 +10,6 @@ public abstract class Weapon extends Item implements IEquipable {
 
     private BaseAttributes attributes;
 
-
     private  IEquipable.EquipType equipType;
 
     public Weapon(){}
@@ -55,15 +54,14 @@ public abstract class Weapon extends Item implements IEquipable {
         this.equipType = type;
     }
 
-    Weapon(Weapon copy)
-    {
+    Weapon(Weapon copy){
+
         super(copy);
         this.attributes = copy.attributes;
         this.equipType = copy.equipType;
     }
 
-    public BaseAttributes getAttributes()
-    {
+    public BaseAttributes getAttributes(){
 
         return this.attributes;
     }
@@ -85,7 +83,6 @@ public abstract class Weapon extends Item implements IEquipable {
         return this.attributes.getMagicDefence();
     }
 
-
     public double getSpeedPoints() {
         return this.attributes.getSpeed();
     }
@@ -93,9 +90,6 @@ public abstract class Weapon extends Item implements IEquipable {
     public void setAttributes(BaseAttributes attributes) {
         this.attributes = attributes;
     }
-
-
-
 
     @Override
     public IEquipable.EquipType getEquipType() {
@@ -106,7 +100,6 @@ public abstract class Weapon extends Item implements IEquipable {
     public void setEquipType(IEquipable.EquipType equipType) {
         this.equipType = equipType;
     }
-
 
     public abstract boolean equip();
 

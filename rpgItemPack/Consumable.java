@@ -33,7 +33,6 @@ public abstract class Consumable extends Item implements IUsable {
         return this.consumableValue;
     }
 
-
     @Override
     public void use(PlayerWarrior player)
     {

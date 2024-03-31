@@ -370,7 +370,6 @@ public class PlayerWarrior extends RpgCharacter {
 
     public boolean setTorsoArmor(ArmorTorso torsoArmor) {
 
-        //if torsoAmrmor is already on and your switching to another torso armor
         if(this.torsoArmor != null) {
 
             totalDefencePoints -= this.torsoArmor.getDefencePoints();
@@ -387,7 +386,6 @@ public class PlayerWarrior extends RpgCharacter {
 
             }
 
-        //if no armor is one and you adding torso armor
         }else{
 
             this.torsoArmor = torsoArmor;
@@ -500,8 +498,6 @@ public class PlayerWarrior extends RpgCharacter {
         return true;
     }
 
-    //public void setSecondaryWeapon(Weapon secondaryWeapon) {this.secondaryWeapon = secondaryWeapon;}
-
     public Mount getMount() {
         return mount;
     }
@@ -509,7 +505,6 @@ public class PlayerWarrior extends RpgCharacter {
     public void setMount(Mount mount) {
         this.mount = mount;
     }
-
 
     public Item getGold(){
 
@@ -615,10 +610,7 @@ public class PlayerWarrior extends RpgCharacter {
         while(true) {
 
             System.out.print(this);
-            //displayTotalAttributes();
-
-
-            // consider putting view inventory and equipment here
+           
             System.out.println("1 View Inventory");
             System.out.println("2 View Equipment");
             System.out.println("3 View Quest");
@@ -805,7 +797,4 @@ public class PlayerWarrior extends RpgCharacter {
     public PlayerWarrior clone(){
         return new PlayerWarrior(this);
     }
-
-
-
 }

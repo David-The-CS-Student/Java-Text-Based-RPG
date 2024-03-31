@@ -10,8 +10,7 @@ public class Bones extends Item{
         this.setCount(3);
     }
 
-    public Bones(Bones copy)
-    {
+    public Bones(Bones copy) {
         super(copy);
     }
 

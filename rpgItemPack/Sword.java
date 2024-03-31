@@ -5,7 +5,6 @@ import rpgBasePack.BaseAttributes;
 import rpgPlayerPack.PlayerSwordsman;
 public class Sword extends WeaponPrimary{
 
-
     public Sword(){}
     public Sword(String name){
 
@@ -30,10 +29,7 @@ public class Sword extends WeaponPrimary{
 
     }
 
-
     public  Sword(Sword copy){
         super(copy);
     }
-
-
 }

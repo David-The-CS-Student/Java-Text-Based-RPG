@@ -12,15 +12,12 @@ import java.util.InputMismatchException;
 import java.util.Random;
 public class Battle {
 
-
     private PlayerWarrior playerWarrior;
 
     private EnemyCharacter enemyCharacter;
 
-
     private boolean isFirstAttack = false;
     private boolean isPlayerTurn = false;
-
 
     private static boolean isBattle = false;
     public Battle(PlayerWarrior player, EnemyCharacter enemy){
@@ -49,7 +46,6 @@ public class Battle {
             System.out.println("3. Run");
             System.out.print("Choice: ");
 
-
             int playerChoice = 0;
 
             try {
@@ -60,7 +56,9 @@ public class Battle {
                 RpgGame.getInput().nextLine();
                 continue;
             }
+
             System.out.println();
+
             if (playerChoice == 1) {
 
                 if (!isFirstAttack) {
@@ -69,13 +67,12 @@ public class Battle {
 
                         isPlayerTurn = true;
 
-                    }else if(playerWarrior.getTotalSpeedPoints() == enemyCharacter.totalSpeedPoints)
-                    {
+                    }else if(playerWarrior.getTotalSpeedPoints() == enemyCharacter.totalSpeedPoints){
+
                         Random rnd = new Random();
                         int rndNumber = rnd.nextInt(2);
 
-                        switch(rndNumber)
-                        {
+                        switch(rndNumber){
                             case 0: isPlayerTurn = true; break;
 
                             case 1: isPlayerTurn = false; break;
@@ -86,7 +83,6 @@ public class Battle {
                 }
 
                 if (isPlayerTurn) {
-
 
                     playerWarrior.attack(enemyCharacter);
 
@@ -99,8 +95,8 @@ public class Battle {
 
                         playerWarrior.setExperience(newExp);
 
-                        if(playerWarrior.getExperience() >= playerWarrior.getExpToNextLv())
-                        {
+                        if(playerWarrior.getExperience() >= playerWarrior.getExpToNextLv()){
+
                             System.out.println("Congratulations you leveled up!!!");
 
                             playerWarrior.setLevel(RpgCalculator.levelCalculator(playerWarrior.getExperience()));
@@ -129,7 +125,6 @@ public class Battle {
                             {
                                 case 'y':
 
-
                                     playerWarrior.getPlayerInventory().addItem(dropItem);
                                     System.out.println();
                                     break exitDropLoop;
@@ -142,20 +137,17 @@ public class Battle {
                                     System.out.println("Invalid Input");
                                     System.out.println();
                             }
-
-
                         }
 
                         System.out.println();
+
                         break;
                     }
 
-
                     enemyCharacter.attack(playerWarrior);
 
+                    if(playerWarrior.getHealth() <= 0){
 
-                    if(playerWarrior.getHealth() <= 0)
-                    {
                         System.out.println("You lost and are hurt badly. You need to recover.");
                         System.out.println();
                         break;
@@ -183,11 +175,9 @@ public class Battle {
                         System.out.println("You defeated a " + enemyCharacter.getName());
                         System.out.println("You gained " + enemyCharacter.getExperience() + " points");
 
-
                         int newExp = playerWarrior.getExperience() + enemyCharacter.getExperience();
 
                         playerWarrior.setExperience(newExp);
-
 
                         if(playerWarrior.getExperience() >= playerWarrior.getExpToNextLv())
                         {
@@ -240,7 +230,6 @@ public class Battle {
                         break;
                     }
 
-
                     System.out.println();
 
                 }
@@ -254,8 +243,6 @@ public class Battle {
 
                     System.out.println((playerWarrior.getPlayerInventory().getCount() + 1) + ". Back");
                     System.out.print("select an item to inspect using its corresponding number: ");
-
-                    //Input mismatch ecxeption
 
                     int itemChoice = 0;
 
@@ -329,10 +316,7 @@ public class Battle {
                 System.out.println("You got away safely");
                 System.out.println();
                 break;
-
             }
-
-
         }
 
         Battle.setIsBattle(false);

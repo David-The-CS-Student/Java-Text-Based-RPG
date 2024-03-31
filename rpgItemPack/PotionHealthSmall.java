@@ -11,7 +11,6 @@ public final class PotionHealthSmall extends Consumable {
         setCount(1);
     }
 
-
     public PotionHealthSmall(PotionHealthSmall copy)
     {
         super(copy);

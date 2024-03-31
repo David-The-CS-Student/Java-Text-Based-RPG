@@ -6,8 +6,6 @@ import rpgPlayerPack.PlayerWarrior;
 
 public class SatinShawl extends ArmorHead{
 
-
-
     public SatinShawl(){
 
         super("Satin Shawl", "Shawl made of satin", 25,

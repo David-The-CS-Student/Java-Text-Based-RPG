@@ -13,7 +13,6 @@ public class FreshCheese extends Consumable{
         setCount(1);
     }
 
-
     public FreshCheese(FreshCheese copy)
     {
         super(copy);

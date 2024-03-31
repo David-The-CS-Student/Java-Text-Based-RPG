@@ -4,6 +4,7 @@ package rpgItemPack;
 import rpgPlayerPack.PlayerWarrior;
 import rpgEnemyPack.EnemyWarrior;
 import rpgBasePack.BaseAttributes;
+
 public class ArmorTorso extends Armor{
 
     public ArmorTorso(){}

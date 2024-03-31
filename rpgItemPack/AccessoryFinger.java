@@ -13,16 +13,12 @@ public abstract class AccessoryFinger extends Accessory{
 
     }
 
-    public AccessoryFinger(String name, String description, int price, BaseAttributes attr)
-    {
+    public AccessoryFinger(String name, String description, int price, BaseAttributes attr){
 
         super(name, description, EquipType.Finger, price, attr);
-
-
     }
 
-    public AccessoryFinger(String name, String description, int price, BaseAttributes attr, PlayerWarrior owner)
-    {
+    public AccessoryFinger(String name, String description, int price, BaseAttributes attr, PlayerWarrior owner){
 
         super(name, description, EquipType.Finger, price, attr, owner);
 
@@ -39,7 +35,6 @@ public abstract class AccessoryFinger extends Accessory{
         super(copy);
 
     }
-
 
     @Override
     public boolean equip() {

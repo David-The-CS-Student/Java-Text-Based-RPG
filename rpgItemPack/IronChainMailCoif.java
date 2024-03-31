@@ -4,8 +4,6 @@ import rpgEnemyPack.EnemyWarrior;
 import rpgPlayerPack.PlayerWarrior;
 public class IronChainMailCoif extends ArmorHead {
 
-
-
     public IronChainMailCoif(){
 
         super("Iron Chain Mail Coif", "A coif made with iron chain mail", 25,

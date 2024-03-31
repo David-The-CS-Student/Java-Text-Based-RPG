@@ -137,11 +137,9 @@ public class Item {
         return this.count;
     }
 
-    public void setCount(int newAmount)
-    {
+    public void setCount(int newAmount){
         this.count = newAmount;
     }
-
 
     public int getId() {
         return id;
@@ -150,7 +148,6 @@ public class Item {
     public void setId(int id) {
         this.id = id;
     }
-
 
     public ItemView getItemView(){
         return this.itemView;
@@ -167,16 +164,13 @@ public class Item {
         this.obtained = obtained;
     }
 
-
     public Item clone(){
 
         return new Item(this);
     }
 
-
     @Override
     public String toString(){
-
 
         return  isStackable() ?
                 "Item Name: "+ this.name +" | " + "Description: "+ this.description + " | " +"Amount: " + this.count :
@@ -184,12 +178,10 @@ public class Item {
     }
 
     @Override
-    public boolean equals(Object compare)
-    {
-        if(compare instanceof Item item)
-        {
-            return this.name.equals(item.getName());
+    public boolean equals(Object compare){
 
+        if(compare instanceof Item item){
+            return this.name.equals(item.getName());
         }
         return false;
     }

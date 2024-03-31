@@ -13,8 +13,7 @@ public class PlayerInventory extends Inventory {
    private final Scanner input = new Scanner(System.in);
 
    private PlayerWarrior currentPlayer;
-   public PlayerInventory ()
-   {
+   public PlayerInventory () {
        super(20);
 
    }
@@ -46,11 +45,9 @@ public class PlayerInventory extends Inventory {
             getItemViews().getObject(viewIndex).displayItemInfo();
          }
       }
-
    }
 
    public void use(){
-
 
       while(true) {
 
@@ -69,8 +66,6 @@ public class PlayerInventory extends Inventory {
             input.nextLine();
             continue;
          }
-         //try catch InputMismatchException
-
 
          if(itemChoice == (getCount()+1))
          {
@@ -157,7 +152,6 @@ public class PlayerInventory extends Inventory {
 
                   }else{
 
-
                      IEquipable currentEquipable = equipment.getEquipable(equipable.getEquipType());
 
                      currentEquipable.unEquip();
@@ -171,7 +165,6 @@ public class PlayerInventory extends Inventory {
                         equipment.setItem(equippedItem.getId(), item);
 
                         this.setItem(itemId, equippedItem);
-
 
                      }
 
@@ -220,7 +213,6 @@ public class PlayerInventory extends Inventory {
                   continue;
                }
 
-
                if(optionChoice == 1){
 
                   usable.use(this.currentPlayer);
@@ -240,15 +232,8 @@ public class PlayerInventory extends Inventory {
                   break;
 
                }
-
-
             }
-
          }
-
       }
-
    }
-
-
 }

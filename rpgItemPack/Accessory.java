@@ -10,21 +10,15 @@ public abstract class Accessory extends Item implements IEquipable {
     private BaseAttributes attributes;
     private EquipType equipType;
 
-
-
     public Accessory(){
-
         super();
-
     }
 
     public Accessory(String name, String description, EquipType type, int price, BaseAttributes attr)
     {
 
         super(name, description, price);
-
         this.equipType = type;
-
         this.attributes = attr;
 
     }

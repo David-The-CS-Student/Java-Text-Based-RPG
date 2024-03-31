@@ -10,8 +10,6 @@ public class DestinyTownState extends RpgGameState{
 
     DestinyTown destinyTown;
 
-
-
     public DestinyTownState(){
 
         super(GameState.DestinyTown);
@@ -58,7 +56,6 @@ public class DestinyTownState extends RpgGameState{
               destinyTown.displaySewersOption();
             }else if(choice == 3)
             {
-                //show quests
                 destinyTown.displayQuestBoard();
             }
             else if(choice == 4){
@@ -71,21 +68,18 @@ public class DestinyTownState extends RpgGameState{
             }
             else if(choice == 6){
 
-                // Player profile
                 RpgGame.getInstance().getPlayer().displayPlayerProfile();
 
             }else if(choice == 7){
 
             //change to Plain1 one
-                //exit while loop
+            //exit while loop
 
             }else if(choice == 8){
 
                 RpgGameStateMachine.getMainInstance().setState(GameState.Quit);
                 break;
             }
-
-
         }
     }
 

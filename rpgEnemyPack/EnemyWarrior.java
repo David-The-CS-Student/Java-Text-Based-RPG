@@ -9,8 +9,6 @@ import rpgItemPack.*;
 
 public class EnemyWarrior extends EnemyCharacter {
 
-
-
     private WeaponPrimary primaryWeapon = null;
     private WeaponSecondary secondaryWeapon = null;
     private ArmorHead headArmor;
@@ -33,8 +31,6 @@ public class EnemyWarrior extends EnemyCharacter {
     }
     public EnemyWarrior(String name, double maxHealth, Inventory inventory, BaseAttributes attributes){
         super(name, maxHealth,inventory, attributes);
-
-
     }
 
     public WeaponPrimary getPrimaryWeapon() {
@@ -45,11 +41,9 @@ public class EnemyWarrior extends EnemyCharacter {
     {
         if(this.primaryWeapon != null) {
 
-
             this.totalAttackPoints -= this.primaryWeapon.getAttackPoints();
             this.totalDefencePoints -= this.primaryWeapon.getDefencePoints();
             this.totalSpeedPoints -= this.primaryWeapon.getSpeedPoints();
-
 
             this.primaryWeapon = primaryWeapon;
 
@@ -64,14 +58,9 @@ public class EnemyWarrior extends EnemyCharacter {
 
             this.primaryWeapon = primaryWeapon;
 
-
             this.totalAttackPoints += this.primaryWeapon.getAttackPoints();
             this.totalDefencePoints += this.primaryWeapon.getDefencePoints();
             this.totalSpeedPoints += this.primaryWeapon.getSpeedPoints();
-
-
-
-
         }
 
         return true;
@@ -90,7 +79,6 @@ public class EnemyWarrior extends EnemyCharacter {
             this.totalDefencePoints -= this.secondaryWeapon.getDefencePoints();
             this.totalSpeedPoints -= this.secondaryWeapon.getSpeedPoints();
 
-
             this.secondaryWeapon = secondaryWeapon;
 
             if(this.secondaryWeapon != null) {
@@ -102,14 +90,11 @@ public class EnemyWarrior extends EnemyCharacter {
 
         }else{
 
-
             this.secondaryWeapon = secondaryWeapon;
 
             this.totalAttackPoints += this.secondaryWeapon.getAttackPoints();
             this.totalDefencePoints += this.secondaryWeapon.getDefencePoints();
             this.totalSpeedPoints += this.secondaryWeapon.getSpeedPoints();
-
-
         }
 
         return true;
@@ -152,8 +137,7 @@ public class EnemyWarrior extends EnemyCharacter {
     public boolean setNeckAccessory(AccessoryNeck neckAccessory)
     {
 
-        if(this.neckAccessory != null)
-        {
+        if(this.neckAccessory != null){
 
             totalVitalityPoints -= this.neckAccessory.getVitalityPoints();
             totalAttackPoints -= this.neckAccessory.getAttackPoints();
@@ -166,8 +150,8 @@ public class EnemyWarrior extends EnemyCharacter {
 
         this.neckAccessory = neckAccessory;
 
-        if(this.neckAccessory != null)
-        {
+        if(this.neckAccessory != null){
+
             totalVitalityPoints += this.neckAccessory.getVitalityPoints();
             totalAttackPoints += this.neckAccessory.getAttackPoints();
             totalMagicPoints += this.neckAccessory.getMagicPoints();
@@ -215,8 +199,7 @@ public class EnemyWarrior extends EnemyCharacter {
     public boolean setFingerAccessory(AccessoryFinger fingerAccessory)
     {
 
-        if(this.fingerAccessory != null)
-        {
+        if(this.fingerAccessory != null){
 
             this.totalVitalityPoints -= this.fingerAccessory.getVitalityPoints();
             this.totalAttackPoints -= this.fingerAccessory.getAttackPoints();
@@ -228,8 +211,7 @@ public class EnemyWarrior extends EnemyCharacter {
 
         this.fingerAccessory = fingerAccessory;
 
-        if(this.fingerAccessory != null)
-        {
+        if(this.fingerAccessory != null){
             this.totalVitalityPoints += this.fingerAccessory.getVitalityPoints();
             this.totalAttackPoints += this.fingerAccessory.getAttackPoints();
             this.totalMagicPoints += this.fingerAccessory.getMagicPoints();
@@ -237,6 +219,7 @@ public class EnemyWarrior extends EnemyCharacter {
             this.totalMagicDefencePoints += this.fingerAccessory.getMagicDefencePoints();
             this.totalSpeedPoints += this.fingerAccessory.getSpeedPoints();
         }
+
       return true;
     }
     public ArmorLegs getLegArmor() {
@@ -301,8 +284,4 @@ public class EnemyWarrior extends EnemyCharacter {
         }
         return true;
     }
-
-
-
-
 }

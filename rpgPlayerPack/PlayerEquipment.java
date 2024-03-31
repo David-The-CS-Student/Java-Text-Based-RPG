@@ -96,16 +96,8 @@ public class PlayerEquipment extends Equipment {
                     }
 
                     System.out.println();
-
                 }
-
-
-
             }
-
         }
-
-
     }
-
 }

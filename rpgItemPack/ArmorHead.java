@@ -7,8 +7,6 @@ import rpgBasePack.BaseAttributes;
 public class ArmorHead extends Armor{
 
     public ArmorHead(){
-
-
     }
     public ArmorHead(String name){
 

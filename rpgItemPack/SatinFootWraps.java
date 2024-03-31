@@ -37,7 +37,6 @@ public class SatinFootWraps extends ArmorFeet{
         setCount(copy.getCount());
     }
 
-
     @Override
     public Item clone() {
         return new SatinFootWraps(this);

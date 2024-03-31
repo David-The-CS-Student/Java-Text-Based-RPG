@@ -68,7 +68,6 @@ public class GameCharacter {
         return "This GameCharacter is of type "+ gc.getClass().getTypeName();
     }
 
-
     @Override
     public String toString()
     {
