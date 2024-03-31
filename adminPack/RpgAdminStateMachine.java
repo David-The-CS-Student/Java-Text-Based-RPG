@@ -143,7 +143,7 @@ public class RpgAdminStateMachine {
 
                 case 3:
 
-                    PlayerWarrior player = adminPlayer;
+                    PlayerWarrior player = RpgAdminStateMachine.getAdminPlayer();
                     player.setHealth(player.getMaxHealth());
                     System.out.println(player.getName() + " is at full health.");
                     System.out.println();
@@ -191,7 +191,7 @@ public class RpgAdminStateMachine {
             System.out.println();
             if(input == 'y')
             {
-                RpgGame.getInstance().setPlayer(adminPlayer);
+                RpgGame.getInstance().setPlayer(RpgAdminStateMachine.getAdminPlayer());
 
                 Save.savePlayerData();
                 Save.saveBankData();
@@ -209,13 +209,9 @@ public class RpgAdminStateMachine {
                 System.out.println("Invalid Input");
 
             }
-
-
         }
-
     }
 
-    public int quitGameNumber = 0;
 
     private void quitMenu(){
 
@@ -232,28 +228,19 @@ public class RpgAdminStateMachine {
                 option = RpgGame.getInput().nextInt();
                 System.out.println();
 
-            }catch (InputMismatchException exc)
-            {
+            }catch (InputMismatchException exc){
                 RpgGame.getInput().nextLine();
                 continue;
             }
 
-            if( option == 1)
-            {
-
+            if( option == 1){
+                RpgGameStateMachine.getMainInstance().setState(RpgGame.getInstance().getPlayer().locationName);
                 break;
 
-            }else if(option == 2)
-            {
-                quitGameNumber = 2;
-                RpgGameStateMachine.getMainInstance().setState("Quit");
+            }else if(option == 2){
+                System.exit(1);
                 break;
-
-            }else{
-
-
             }
-
         }
     }
 
@@ -262,21 +249,15 @@ public class RpgAdminStateMachine {
         mainLoop:
         while(true){
 
-
-            switch (this.currentState)
-            {
+            switch (this.currentState){
 
                 case MainMenu:
-
-
                     mainMenu();
-
                     continue;
 
                 case Leveling, Items, Battle: {
 
                     RpgAdminState current = this.getAdminState(this.currentState);
-
                     current.update();
 
                     continue;
@@ -284,42 +265,28 @@ public class RpgAdminStateMachine {
 
                 case Profile:
 
-
                     adminPlayer.displayPlayerProfile();
-
                     this.currentState = AdminState.MainMenu;
 
                     continue;
                 case Bank:
 
-                    Bank.setPlayer(adminPlayer);
+                    Bank.setPlayer(RpgAdminStateMachine.getAdminPlayer());
                     Bank.getInstance().use("Administrator");
 
                     Bank.setPlayer(null);
                     this.currentState = AdminState.MainMenu;
 
                     continue;
-
-
                 case Save:
 
-                    //save and quit or just quit
                     saveMenu();
-
                     continue;
 
-
                 case Quit:
-
-                    //quit or start main game
                     quitMenu();
-
                     break mainLoop;
             }
-
-
         }
-
-
     }
 }

@@ -22,8 +22,6 @@ public class AdminLevelingState extends RpgAdminState {
             System.out.println("1. Level up!");
             System.out.println("2. Main Menu");
 
-
-
             int adminChoice;
 
             try{
@@ -39,25 +37,22 @@ public class AdminLevelingState extends RpgAdminState {
 
             if(adminChoice == 1)
             {
-              //level up!
-
+             
                 PlayerWarrior player = RpgAdminStateMachine.getAdminPlayer();
                 int nextExp = RpgCalculator.expCalculator(player.getLevel()+1);
 
-               player.setExperience(nextExp);
+                player.setExperience(nextExp);
 
                 int nextLevel = RpgCalculator.levelCalculator(nextExp);
 
-               player.setLevel(nextLevel);
+                player.setLevel(nextLevel);
 
                 System.out.println(player.getName() + " is now level " + player.getLevel() + "!");
                 System.out.println();
 
                 player.addAttributesPoints(6);
 
-            }else if(adminChoice == 2)
-            {
-                //change to main state
+            }else if(adminChoice == 2){
                 RpgAdminStateMachine.getInstance().setCurrentState(AdminState.MainMenu);
                 break;
 
@@ -66,7 +61,6 @@ public class AdminLevelingState extends RpgAdminState {
                 System.out.println("Invalid Input");
             }
         }
-
     }
 
     @Override

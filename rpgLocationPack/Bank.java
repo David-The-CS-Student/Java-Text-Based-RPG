@@ -1,5 +1,6 @@
 package rpgLocationPack;
 import mainApp.RpgGame;
+import rpgBasePack.Inventory;
 import rpgItemPack.*;
 import generics.Array;
 import rpgPlayerPack.PlayerInventory;
@@ -270,7 +271,6 @@ public class Bank {
                count++;
                item.setId(count);
 
-               //System.out.println(count);
            }
 
            bankItemView.addItem(item);
@@ -368,9 +368,9 @@ public class Bank {
                case'1': {
                    //bank item selector loop
 
-                   assert  player != null;
+                   assert  Bank.getPlayer() != null;
 
-                   PlayerInventory playerInventory = player.getPlayerInventory();
+                   Inventory playerInventory = Bank.getPlayer().getInventory();
 
                    while (true) {
 
@@ -462,10 +462,9 @@ public class Bank {
                case '2': {
                    //inventory selector loop
 
-                   assert player != null;
+                   assert Bank.getPlayer() != null;
 
-                   PlayerInventory playerInventory = player.getPlayerInventory();
-
+                   Inventory playerInventory = Bank.getPlayer().getInventory();
 
 
                    while (true) {
@@ -477,9 +476,6 @@ public class Bank {
                        System.out.println("0 Back");
 
                        System.out.print("Choice: ");
-
-
-
 
                        int itemChoice = 0;
 
@@ -502,7 +498,7 @@ public class Bank {
                           {
                             if (bankItem.item.getCount() > 1) {
 
-                               System.out.print("How much would you like to store?: ");
+                               System.out.print("How much would you like to take?: ");
 
                                int itemAmount = 0;
 
@@ -536,8 +532,9 @@ public class Bank {
                                    break;
 
                                }else{
-                                   System.out.println("Hello");
-                                   playerInventory.addItem(itemInBank, itemAmount);
+                                  
+                                   itemInBank.setCount(itemAmount);
+                                   playerInventory.addItem(itemInBank);
                                    break;
                                }
 

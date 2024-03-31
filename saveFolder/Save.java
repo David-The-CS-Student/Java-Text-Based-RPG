@@ -13,7 +13,7 @@ import java.io.*;
 public class Save {
 
 
-    private static final File playerDataFile = new File("./src/saveFolder/SaveFile.txt");
+    private static final File playerDataFile = new File("./saveFolder/SaveFile.txt");
     public static File getPlayerDataFile(){
 
         return playerDataFile;
@@ -22,14 +22,14 @@ public class Save {
 
 
 
-    private static final File bankDataFile = new File("./src/saveFolder/BankData.txt");
+    private static final File bankDataFile = new File("./saveFolder/BankData.txt");
 
     public static File getBankDataFile(){
         return bankDataFile;
     }
 
 
-    private static final File questManagerFile = new File("./src/saveFolder/QuestManagerData.txt");
+    private static final File questManagerFile = new File("./saveFolder/QuestManagerData.txt");
 
     public static File getQuestManagerFile(){
 

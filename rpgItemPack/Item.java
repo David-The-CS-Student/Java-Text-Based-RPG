@@ -73,6 +73,7 @@ public class Item {
         this.price = copy.getPrice();
         this.stackable = copy.isStackable();
         this.count = copy.count;
+        this.playerOwner = copy.playerOwner;
 
     }
     public String getName(){

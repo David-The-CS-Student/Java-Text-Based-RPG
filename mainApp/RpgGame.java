@@ -16,7 +16,6 @@ class PlayerCreator {
 
     private static PlayerWarrior playerInstance = null;
     private PlayerCreator(){
-
     }
 
     private static PlayerWarrior createSwordsman(String name){
@@ -31,18 +30,15 @@ class PlayerCreator {
     }
 
     public static PlayerWarrior getPlayerInstance(){
-
         return playerInstance;
     }
 
-    public static void setPlayerInstance(PlayerWarrior instance)
-    {
+    public static void setPlayerInstance(PlayerWarrior instance){
         playerInstance = instance;
     }
 
     public static PlayerWarrior createPlayerWarrior()
     {
-
 
         while(true) {
 
@@ -76,7 +72,6 @@ class PlayerCreator {
                     System.out.println();
 
                     PlayerWarrior playerWarrior = createSwordsman(name);
-
 
                     IronChainMailCoif ironChainMailCoif = new IronChainMailCoif(playerWarrior);
                     playerWarrior.setHeadArmor(ironChainMailCoif);
@@ -117,10 +112,8 @@ class PlayerCreator {
 
                     System.out.println();
 
-
                     PlayerWarrior playerMage = createMage(name);
 
-                    //set and add armor and weapons to equipment
                     SatinShawl shawl = new SatinShawl(playerMage);
                     playerMage.setHeadArmor(shawl);
                     playerMage.getEquipment().addItem(shawl);
@@ -152,36 +145,27 @@ class PlayerCreator {
                     System.out.println();
 
             }
-
-
         }
-
     }
 }
 
 public class RpgGame {
-
 
     private static RpgGame instance = null;
 
     private final static Scanner input = new Scanner(System.in);
     private RpgGame(){}
 
-
     public PlayerWarrior getPlayer(){
-
       return PlayerCreator.getPlayerInstance();
     }
 
     public  void setPlayer(PlayerWarrior player){
-
         PlayerCreator.setPlayerInstance(player);
     }
 
-   public PlayerSwordsman getSwordsman()
-   {
+   public PlayerSwordsman getSwordsman(){
        if(getPlayer() instanceof PlayerSwordsman swordsman) {
-
            return swordsman;
        }
 
@@ -191,9 +175,7 @@ public class RpgGame {
     public static RpgGame getInstance(){
 
         if(instance ==  null){
-
             instance = new RpgGame();
-
             return instance;
         }
 
@@ -224,13 +206,11 @@ public class RpgGame {
 
     public void update(){
 
-
-     //continue or new game
-
        if(Save.getPlayerDataFile().exists())
        {
            exitLoop:
            while(true) {
+
                System.out.println("Would you like to continue or start a new game?");
 
                System.out.println("1. Continue");
@@ -249,7 +229,6 @@ public class RpgGame {
                        Load.loadBankData();
                        Load.loadQuestManagerData();
 
-
                        break exitLoop;
 
                    case '2':
@@ -257,14 +236,9 @@ public class RpgGame {
                        break exitLoop;
                }
            }
-
        }else{
-
-
            newGame();
-
        }
-
 
        while(true){
 
@@ -304,37 +278,10 @@ public class RpgGame {
                System.out.println("Invalid Input");
 
            }
-
-
        }
-
 
         RpgGameStateMachine.getMainInstance().update();
 
-
-        /*
-        IronSword ironSword = new IronSword((PlayerSwordsman) warrior);
-
-        ArmorTorso chainMail = new ArmorTorso("Iron Chain Mail", "Chain mail made of iron.", 35, warrior,
-                new BaseAttributes(0.0,0.0,0.0,3.0, 0.0, -1.0) );
-
-        warrior.getPlayerInventory().addItem(ironSword);
-
-        warrior.getPlayerInventory().addItem(chainMail);
-
-        warrior.getPlayerInventory().use();
-
-       // warrior.getEquipment().displayItems();
-
-        warrior.getEquipment().use();
-
-        warrior.displayTotalAttributes();
-
-        warrior.getEquipment().use();
-
-        warrior.displayTotalAttributes();
-
-       */
     }
 
 

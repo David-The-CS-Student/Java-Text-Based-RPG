@@ -13,7 +13,6 @@ public class Bones extends Item{
     public Bones(Bones copy)
     {
         super(copy);
-        setCount(copy.getCount());
     }
 
     @Override

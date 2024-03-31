@@ -50,12 +50,12 @@ public class ArmorLegs extends Armor{
 
         if(getPlayerOwner() != null)
         {
-            getPlayerOwner().setLegArmor(this);
-            return true;
+            return getPlayerOwner().setLegArmor(this);
+            
         }else if(getEnemyOwner() != null)
         {
-            getEnemyOwner().setLegArmor(this);
-            return true;
+            return getEnemyOwner().setLegArmor(this);
+            
         }
 
         return false;

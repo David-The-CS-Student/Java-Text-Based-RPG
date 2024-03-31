@@ -15,7 +15,6 @@ public class Equipment extends Inventory{
         super(copy);
     }
 
-
     public IEquipable getEquipable(IEquipable.EquipType  type){
 
         for(int itemIndex = 0; itemIndex < getCount(); itemIndex++){
@@ -28,11 +27,8 @@ public class Equipment extends Inventory{
                     return equipable;
                 }
             }
-
         }
-
         return null;
-
     }
 
     public Item getItem(IEquipable.EquipType  type){

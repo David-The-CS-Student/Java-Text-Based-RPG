@@ -119,7 +119,7 @@ public class EnemyWarrior extends EnemyCharacter {
         return this.headArmor;
     }
 
-    public void setHeadArmor(ArmorHead head) {
+    public boolean setHeadArmor(ArmorHead head) {
         if(this.headArmor != null) {
 
             totalDefencePoints -= this.headArmor.getDefencePoints();
@@ -143,6 +143,8 @@ public class EnemyWarrior extends EnemyCharacter {
             totalSpeedPoints += this.headArmor.getSpeedPoints();
 
         }
+
+        return true;
     }
 
     public AccessoryNeck getNeckAccessory(){return this.neckAccessory;}
@@ -181,7 +183,7 @@ public class EnemyWarrior extends EnemyCharacter {
         return this.torsoArmor;
     }
 
-    public void setTorsoArmor(ArmorTorso torsoArmor) {
+    public boolean setTorsoArmor(ArmorTorso torsoArmor) {
         if(this.torsoArmor != null) {
 
             totalDefencePoints -= this.torsoArmor.getDefencePoints();
@@ -205,6 +207,8 @@ public class EnemyWarrior extends EnemyCharacter {
             totalSpeedPoints += this.torsoArmor.getSpeedPoints();
 
         }
+
+        return true;
     }
     public AccessoryFinger getFingerAccessory(){return this.fingerAccessory;}
 
@@ -239,7 +243,7 @@ public class EnemyWarrior extends EnemyCharacter {
         return this.legArmor;
     }
 
-    public void setLegArmor(ArmorLegs legArmor) {
+    public boolean setLegArmor(ArmorLegs legArmor) {
         if(this.legArmor != null) {
 
             totalDefencePoints -= this.legArmor.getDefencePoints();
@@ -263,13 +267,15 @@ public class EnemyWarrior extends EnemyCharacter {
             totalSpeedPoints += this.legArmor.getSpeedPoints();
 
         }
+
+        return true;
     }
 
     public ArmorFeet getFeetArmor() {
         return this.feetArmor;
     }
 
-    public void setFeetArmor(ArmorFeet feetArmor) {
+    public boolean setFeetArmor(ArmorFeet feetArmor) {
         if(this.feetArmor != null) {
 
             totalDefencePoints -= this.feetArmor.getDefencePoints();
@@ -293,6 +299,7 @@ public class EnemyWarrior extends EnemyCharacter {
             totalSpeedPoints += this.feetArmor.getSpeedPoints();
 
         }
+        return true;
     }
 
 

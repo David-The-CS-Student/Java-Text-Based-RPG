@@ -1,3 +1,4 @@
 MoldyCheese 1
-Bones 2
-StaffCedar 0
+Bones 6
+PotionWater 5
+PotionHealthSmall 5

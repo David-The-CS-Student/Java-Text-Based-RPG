@@ -14,16 +14,11 @@ enum GameState{
     SkaburnVillage,
 
     Quit
-
-
-
 }
 
 public class RpgGameStateMachine {
 
-
-
-   private static RpgGameStateMachine mainInstance = null;
+    private static RpgGameStateMachine mainInstance = null;
 
     private GameState currentState;
 
@@ -40,11 +35,9 @@ public class RpgGameStateMachine {
 
 
     public static RpgGameStateMachine getMainInstance(){
-
         if(mainInstance ==  null){
 
             mainInstance = new RpgGameStateMachine();
-
             return mainInstance;
         }
 
@@ -52,37 +45,21 @@ public class RpgGameStateMachine {
     }
 
     private RpgGameState getRpgGameState(GameState gameState){
-
-
-        for(int stateIndex = 0; stateIndex < rpgGameStates.getCount(); stateIndex++)
-        {
-            if(rpgGameStates.getObject(stateIndex).getState() == gameState )
-            {
+        for(int stateIndex = 0; stateIndex < rpgGameStates.getCount(); stateIndex++){
+            if(rpgGameStates.getObject(stateIndex).getState() == gameState ){
                 return rpgGameStates.getObject(stateIndex);
             }
 
         }
-
-
-
-
         return null;
     }
 
     public GameState getRpgGameState(String stateName){
-
-
-        for(int stateIndex = 0; stateIndex < rpgGameStates.getCount(); stateIndex++)
-        {
-            if(rpgGameStates.getObject(stateIndex).getState().name().equals(stateName) )
-            {
+        for(int stateIndex = 0; stateIndex < rpgGameStates.getCount(); stateIndex++){
+            if(rpgGameStates.getObject(stateIndex).getState().name().equals(stateName)){
                 return rpgGameStates.getObject(stateIndex).getState();
-
             }
-
         }
-
-
         return null;
     }
 
@@ -92,22 +69,16 @@ public class RpgGameStateMachine {
 
     public String getCurrentStateString(){return this.currentState.name();}
     public void setState(GameState newState){
-
-
         this.currentState = newState;
     }
 
     public void setState(String newState){
 
-        for(int stateIndex = 0; stateIndex < rpgGameStates.getCount(); stateIndex++)
-        {
-            if(rpgGameStates.getObject(stateIndex).getState().name().equals(newState) )
-            {
+        for(int stateIndex = 0; stateIndex < rpgGameStates.getCount(); stateIndex++){
+            if(rpgGameStates.getObject(stateIndex).getState().name().equals(newState)){
 
                 this.currentState = rpgGameStates.getObject(stateIndex).getState();
-
             }
-
         }
 
         if(newState.equals(GameState.Quit.name()))
@@ -146,24 +117,15 @@ public class RpgGameStateMachine {
 
                 case Quit:
 
-                    //ask to save or not
-                    if(RpgAdminStateMachine.getInstance().quitGameNumber != 2) {
-                        Save.savePlayerData();
-                        Save.saveBankData();
-                        Save.saveQuestMangerData();
-                        System.out.println("Game saved");
-
-                    }else{
-
-                        System.out.println("Game did not save again");
-                    }
+                 
+                    Save.savePlayerData();
+                    Save.saveBankData();
+                    Save.saveQuestMangerData();
+                    System.out.println("Game saved");
 
                     break gameLoop;
 
             }
-
-
-
         }
     }
 

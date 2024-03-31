@@ -29,14 +29,12 @@ public class AdminBattleState  extends RpgAdminState{
 
                 option = RpgGame.getInput().nextInt();
                 System.out.println();
-            }catch (InputMismatchException exc)
-            {
+            }catch (InputMismatchException exc){
                 RpgGame.getInput().nextLine();
                 continue;
             }
 
-            if(option == 1)
-            {
+            if(option == 1){
                 while (true) {
 
                     System.out.println("Please enter the class name of a enemy character or (e) to exit.");
@@ -68,17 +66,12 @@ public class AdminBattleState  extends RpgAdminState{
                              InstantiationException e) {
                         throw new RuntimeException(e);
                     }
-
-
                 }
-
             } else if (option == 2) {
 
                 RpgAdminStateMachine.getInstance().setCurrentState(AdminState.MainMenu);
                 break;
             }
-
-
         }
     }
 

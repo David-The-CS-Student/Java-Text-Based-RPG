@@ -11,11 +11,6 @@ public abstract class Armor extends Item implements IEquipable {
 
     private BaseAttributes attributes;
 
-
-
-    //make constructor
-
-
     private EquipType equipType;
     public Armor(){}
     public Armor(String name){
@@ -68,9 +63,7 @@ public abstract class Armor extends Item implements IEquipable {
         this.equipType = copy.equipType;
     }
 
-    public BaseAttributes getAttributes()
-    {
-
+    public BaseAttributes getAttributes(){
         return this.attributes;
     }
 
@@ -90,7 +83,6 @@ public abstract class Armor extends Item implements IEquipable {
         this.attributes = attributes;
     }
 
-
     @Override
     public EquipType getEquipType(){
         return this.equipType;
@@ -101,16 +93,9 @@ public abstract class Armor extends Item implements IEquipable {
         this.equipType = equipType;
     }
 
-
-
-
-
     public abstract boolean equip();
 
     public abstract void unEquip();
-
-    //method for wearing armor?
-
 
 
     @Override

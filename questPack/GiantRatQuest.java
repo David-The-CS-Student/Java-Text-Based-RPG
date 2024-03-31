@@ -1,14 +1,10 @@
 package questPack;
 
-import questPack.Quest;
 import rpgEnemyPack.EnemyCharacter;
 import rpgEnemyPack.GiantRat;
 import rpgItemPack.Item;
-import rpgLocationPack.DestinyTown;
 
 public class GiantRatQuest extends Quest {
-
-
 
     final int ratsToKill = 10;
     private int ratKillCount = 0;
@@ -17,10 +13,8 @@ public class GiantRatQuest extends Quest {
     private int ratPeltCount = 0;
 
     public GiantRatQuest(){
-
         super("Big Rat Problems", "Destiny Town", new String[]{"Kill 10 giant rats", "Collect 1 rat pelts"}, "Easy" );
     }
-
 
     public int getRatKillCount() {
         return ratKillCount;
@@ -32,21 +26,15 @@ public class GiantRatQuest extends Quest {
 
     public void incrementRatKillCount(EnemyCharacter enemy) {
         if (killRatio() < 100.0) {
-
-            if (enemy instanceof GiantRat rat && enemy.getHealth() <= 0) {
-
+            if (enemy instanceof GiantRat && enemy.getHealth() <= 0) {
                 this.ratKillCount++;
             }
         }
     }
 
-
     public double killRatio(){
-
         double ratio = ((double)ratKillCount/(double)ratsToKill);
-
         return Math.round((ratio) * 100.0);
-
     }
 
     public int getRatPeltCount() {
@@ -68,11 +56,8 @@ public class GiantRatQuest extends Quest {
     }
 
 
-
     public double peltCollectionRatio(){
-
         double ratio = (double)ratPeltCount/(double)ratPeltsToCollect;
-
         return Math.round(ratio * 100.0);
     }
 
@@ -96,12 +81,7 @@ public class GiantRatQuest extends Quest {
             ratPeltCount = Integer.parseInt((String)values[1]);
         }
 
-
-
-
-
     }
-
 
     @Override
     public int getObjectiveCount() {
@@ -120,25 +100,13 @@ public class GiantRatQuest extends Quest {
         }
     }
 
-
-
     @Override
     public String getQuestData() {
-
         String questData = ratKillCount + " " + ratPeltCount;
-
         return  questData;
     }
 
-
-
     public static void main(String[] args){
-
-        //GiantRatQuest test = new GiantRatQuest();
-
-       // test.setRatKillCount(5);
-
-        //test.displayQuestInfo();
 
     }
 }

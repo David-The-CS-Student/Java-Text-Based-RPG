@@ -48,12 +48,12 @@ public class ArmorFeet extends Armor{
 
         if(getPlayerOwner()!= null)
         {
-            getPlayerOwner().setFeetArmor(this);
-            return true;
+            return getPlayerOwner().setFeetArmor(this);
+           
         }else if(getEnemyOwner() != null)
         {
-           getEnemyOwner().setFeetArmor(this);
-           return true;
+           return getEnemyOwner().setFeetArmor(this);
+           
         }
 
         return false;

@@ -11,8 +11,6 @@ public class GameCharacter {
         this.name = "N/A";
         this.maxHealth = 0.0;
         this.health = 0.0;
-
-
     }
 
     public GameCharacter(String name, double baseHealth) {
@@ -59,8 +57,6 @@ public class GameCharacter {
         return this.health/this.maxHealth;
     }
 
-
-
     public void displayClassInfo(){
 
         System.out.println("I am a game character");
@@ -76,7 +72,6 @@ public class GameCharacter {
     @Override
     public String toString()
     {
-
         return "this - " + this.getClass().getSimpleName() + "\n" +
                 " Character Name: " + this.getName() + " | " + "Health Points: "+ this.getHealth();
     }

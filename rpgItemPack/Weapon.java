@@ -119,21 +119,4 @@ public abstract class Weapon extends Item implements IEquipable {
     }
 
 
-    //method for equip weapon?
-/*
-    @Override
-    public String toString(){
-
-        if(owner == null) {
-            return "this - " + this.getClass().getSimpleName() + "\n"+
-                    " Weapon Name: " + this.getName() + " | " + "Owner: none" + "\n" +
-                    super.toString();
-        }else{
-
-            return "this - " + this.getClass().getSimpleName() + "\n"+
-                    " Weapon Name: " + this.getName() + " | " + "Owner: " +  owner.getName() + "\n"+
-                    super.toString();
-        }
-    }
-*/
 }

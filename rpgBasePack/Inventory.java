@@ -10,11 +10,8 @@ public class Inventory {
     Array<Item.ItemView> itemViews;
     private int count = 0;
 
-
-    //no,  no - argument constructor all inventories must have a size;
     public Inventory(int size)
     {
-
         items = new Item[size];
         itemViews = new Array<>(size);
     }
@@ -33,7 +30,6 @@ public class Inventory {
 
     public Item getItem(int index)
     {
-        //exception handling if index is out of range
         try {
 
             return items[index];
@@ -51,10 +47,10 @@ public class Inventory {
     public Item getItem(String name)
     {
 
-        for(Item item : items) {
+        for(int itemIndex = 0; itemIndex < this.count; itemIndex++) {
 
-            if(item.getName().equals(name)) {
-                return item;
+            if(items[itemIndex].getName().equals(name)) {
+                return items[itemIndex];
             }
         }
 
@@ -85,48 +81,37 @@ public class Inventory {
         return getItemViews().getObject(index);
     }
 
-    public void addItem(Item newItem)
-    {
-        //try catch for exception handling if count is out of length
-        try{
+    public void addItem(Item newItem){
 
-            if(newItem.isStackable()) {
-                for (Item item : items) {
+        if(newItem.isStackable()) {
+            for (int itemIndex = 0; itemIndex < this.count; itemIndex++) {
 
-                    if (newItem.equals(item)) {
+                if (newItem.equals(items[itemIndex])) {
 
-                        int newCount = item.getCount() + newItem.getCount();
+                    int newCount = items[itemIndex].getCount() + newItem.getCount();
 
-                        item.setCount(newCount);
-
-                        return;
-                    }
-
+                    items[itemIndex].setCount(newCount);
+                    
+                    return;
                 }
             }
-
-            System.out.println(newItem.getName() + " has been added to " + this.getClass().getSimpleName());
-            System.out.println();
-
-            items[count] = newItem;
-
-
-            items[count].setId(count);
-
-
-            itemViews.add(new Item.ItemView(items[count]));
-            count++;
-
-        }catch(ArrayIndexOutOfBoundsException err){
-
-            System.out.println(err.getMessage());
-
         }
+
+        items[count] = newItem;
+
+        items[count].setId(count);
+
+        itemViews.add(new Item.ItemView(items[count]));
+
+        System.out.println(newItem.getName() + " has been added to " + this.getClass().getSimpleName());
+        System.out.println();
+
+        count++;
+
     }
 
     public void addItem(Item newItem, int amount) {
 
-        //try catch for exception handling if count is out of length
             try {
 
                 if (newItem.isStackable()) {
@@ -145,27 +130,25 @@ public class Inventory {
 
                                 return;
 
-                            } else {
-
-                                System.out.println((amount * newItem.getCount()) + " " + newItem.getName() + " has been added to " + this.getClass().getSimpleName());
-
-                                System.out.println();
-
-
-                                items[count] = newItem;
-
-                                items[count].setId(count);
-
-                                items[count].setCount(amount * newItem.getCount());
-
-                                itemViews.add(new Item.ItemView(items[count]));
-
-                                count++;
-
-                                return;
-                            }
-
+                            } 
+                            
                         }
+                            
+                        System.out.println((amount * newItem.getCount()) + " " + newItem.getName() + " has been added to " + this.getClass().getSimpleName());
+
+                        System.out.println();
+
+
+                        items[count] = newItem;
+
+                        items[count].setId(count);
+
+                        items[count].setCount(amount * newItem.getCount());
+
+                        itemViews.add(new Item.ItemView(items[count]));
+
+                        count++;
+                            
                     }else {
 
                         System.out.println((amount * newItem.getCount()) + " " + newItem.getName() + " has been added to " + this.getClass().getSimpleName());
@@ -185,14 +168,12 @@ public class Inventory {
                     }
                 }else {
 
-
                     for(int itemAmount = 0; itemAmount < amount; itemAmount++) {
                         System.out.println("1 " + newItem.getName() + " has been added to " + this.getClass().getSimpleName());
 
                         System.out.println();
 
-
-                        items[count] = newItem;
+                        items[count] = newItem.clone();
 
                         items[count].setId(count);
 
@@ -206,7 +187,6 @@ public class Inventory {
             System.out.println(err.getMessage());
 
         }
-
     }
 
     //remove item at index

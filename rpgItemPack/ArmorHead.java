@@ -51,13 +51,12 @@ public class ArmorHead extends Armor{
 
         if(getPlayerOwner() != null)
         {
-            getPlayerOwner().setHeadArmor(this);
-            return true;
+            return getPlayerOwner().setHeadArmor(this);
+            
 
         }else if(getEnemyOwner() != null)
         {
-            getEnemyOwner().setHeadArmor(this);
-            return true;
+            return getEnemyOwner().setHeadArmor(this);
         }
       return false;
     }

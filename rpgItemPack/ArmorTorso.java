@@ -49,15 +49,12 @@ public class ArmorTorso extends Armor{
 
         if(getPlayerOwner() != null)
         {
-            getPlayerOwner().setTorsoArmor(this);
-            return true;
+            return getPlayerOwner().setTorsoArmor(this);
 
         }else if(getEnemyOwner() != null)
         {
-            getEnemyOwner().setTorsoArmor(this);
-            return true;
+            return getEnemyOwner().setTorsoArmor(this);
         }
-
 
         return false;
     }

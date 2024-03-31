@@ -41,9 +41,6 @@ public class AdminItemsState extends RpgAdminState{
                     System.out.println("Please enter class name of the item you want to add to your inventory or (e) to exit");
                     System.out.print("Class Name: ");
 
-
-
-
                     String input = RpgGame.getInput().next();
 
                     if(input.equals("e"))

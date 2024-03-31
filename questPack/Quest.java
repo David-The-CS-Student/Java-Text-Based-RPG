@@ -13,9 +13,6 @@ public abstract class Quest {
     private boolean complete;
     private String[] objectives;
 
-
-
-
     public Quest (final String name, final String origin, final String[] objectives, String difficultyStatus){
 
         this.name = name;
@@ -57,8 +54,8 @@ public abstract class Quest {
 
         return this.objectives[index];
     }
+    
     public void displayQuestInfo(){
-
 
         System.out.println("Quest Name: " + this.name);
         System.out.println("-----------------------------------------");

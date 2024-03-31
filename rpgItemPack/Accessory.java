@@ -49,7 +49,7 @@ public abstract class Accessory extends Item implements IEquipable {
 
     public Accessory(Accessory copy){
 
-        super(copy.getName(), copy.getDescription(), copy.getPrice());
+        super(copy);
         this.setAttributes(copy.attributes);
         this.equipType = copy.equipType;
     }
