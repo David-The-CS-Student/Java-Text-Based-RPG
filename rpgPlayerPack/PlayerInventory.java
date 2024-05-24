@@ -216,13 +216,13 @@ public class PlayerInventory extends Inventory {
                if(optionChoice == 1){
 
                   usable.use(this.currentPlayer);
-                  System.out.println(item.getId());
+                  
                   this.removeItem(item.getId());
                   break;
                }
                else if(optionChoice == 2)
                {
-                  //are you sure?!
+                  
                   this.removeItem(item.getId());
 
                   break;

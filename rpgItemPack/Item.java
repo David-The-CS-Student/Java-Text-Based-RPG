@@ -76,6 +76,7 @@ public class Item {
         this.playerOwner = copy.playerOwner;
 
     }
+    
     public String getName(){
         return this.name;
     }
