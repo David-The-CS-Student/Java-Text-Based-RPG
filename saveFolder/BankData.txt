@@ -1,4 +1,1 @@
-MoldyCheese 1
-Bones 6
-PotionWater 5
-PotionHealthSmall 5
+
