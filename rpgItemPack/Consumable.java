@@ -41,10 +41,16 @@ public abstract class Consumable extends Item implements IUsable {
 
         if(newHealth > player.getMaxHealth()) {
 
+            System.out.println();
+            System.out.println(player.getName() + "'s health has been fully restored");
+            System.out.println();
             player.setHealth(player.getMaxHealth());
             return;
         }
 
+        System.out.println();
+        System.out.println(player.getName() + " restored " + getConsumableValue() + " health points");
+        System.out.println();
         player.setHealth(newHealth);
     }
 
@@ -55,10 +61,14 @@ public abstract class Consumable extends Item implements IUsable {
 
         if(newHealth > enemy.getMaxHealth())
         {
+            System.out.println();
+            System.out.println(enemy.getName() + "'s health has been fully restored");
             enemy.setHealth(enemy.getMaxHealth());
             return;
         }
 
+        System.out.println();
+        System.out.println(enemy.getName() + " restored " + getConsumableValue() + " health points");
         enemy.setHealth(newHealth);
     }
 
