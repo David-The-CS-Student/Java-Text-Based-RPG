@@ -13,12 +13,12 @@ This is a text based RPG with two classes Swordsman and Mage
 
 
 --Review Questions---
-How is the project's code readability?
-How is the OOP of the project?
-How is the codebase consistency like naming convention and class structure etc?
-Is the codebase modular?
-Is the codebase extensible?
-How is the project's maintainability?
+How is the project's code readability? Explain.
+How is the OOP of the project? Explain.
+How is the codebase consistency like naming convention and class structure etc? Explain.
+Is the codebase modular? Meaning is the codebase easy to manage and update independently? Explain.
+Is the codebase extensible? Explain.
+How is the project's maintainability? Explain.
 
 Is there anything I could improve upon?
 What are my programming strength and weakness?
