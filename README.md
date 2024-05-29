@@ -3,7 +3,7 @@ Author: David Harris
 --To Reviewers 
 This is a text based RPG with two classes Swordsman and Mage
 -The Application also has create new game and saving
--Feature are Inventory, Equipment, Stats, Battling, Quests, Banking
+-Feature are Inventory, Equipment, Stats, Leveling, Battling, Quests, Banking
 -Lastly it has an Admin mode a feature for testing game features
 
 --Note--
