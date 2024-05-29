@@ -48,7 +48,9 @@ public class AdminLevelingState extends RpgAdminState {
                 player.setLevel(nextLevel);
 
                 System.out.println(player.getName() + " is now level " + player.getLevel() + "!");
+                System.out.println("You gained 6 attribute points!");
                 System.out.println();
+
 
                 player.addAttributesPoints(6);
 

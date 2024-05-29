@@ -101,6 +101,8 @@ public class Battle {
 
                             playerWarrior.setLevel(RpgCalculator.levelCalculator(playerWarrior.getExperience()));
 
+                            System.out.println("You gained 6 attribute points!");
+                            System.out.println();
                             playerWarrior.addAttributesPoints(6);
 
                         }
@@ -185,6 +187,8 @@ public class Battle {
 
                             playerWarrior.setLevel(RpgCalculator.levelCalculator(playerWarrior.getExperience()));
 
+                            System.out.println("You gained 6 attribute points!");
+                            System.out.println();
                             playerWarrior.addAttributesPoints(6);
                         }
 
