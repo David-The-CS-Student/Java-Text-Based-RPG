@@ -22,3 +22,4 @@ How is the project's maintainability? Explain.
 
 Is there anything I could improve upon?
 What are my programming strength and weakness?
+Anything else i should know about?
